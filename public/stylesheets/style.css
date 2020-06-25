@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+.img_size{
+  padding-left: 15%;
+  padding-bottom: 3%;
+}
+
+.img_size img{
+  width: 400px;
+  height: 300px;
+}
