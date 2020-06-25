@@ -21,6 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', mainRouter);
 app.use('/lab1', mainRouter);
+app.use('/lab2', mainRouter);
+app.use('/lab3', mainRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
