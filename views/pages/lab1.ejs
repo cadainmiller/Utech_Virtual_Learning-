@@ -4,7 +4,46 @@
 
 <body>
     <% include ../partials/nav %>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Superposition</h1>
+            <p class="lead">Superposition is the ability of a quantum system to be in multiple states at the same time
+                until it is measured.</p>
+        </div>
+    </div>
+    <div class="container pb-xl-5">
+        <form>
+            <div class="form-group col-md-8">
+                <label for="r1">Please Enter Resistance [R1]</label>
+                <input type="text" class="form-control" id="r1" name="r1" placeholder="">
+            </div>
 
+            <div class="form-group col-md-8">
+                <label for="r2">Please Enter Resistance [R2]</label>
+                <input type="text" class="form-control" id="r2" name="r2" placeholder="">
+            </div>
+
+            <div class="form-group col-md-8">
+                <label for="r3">Please Enter Resistance [R3]</label>
+                <input type="text" class="form-control" id="r3" name="r3" placeholder="">
+            </div>
+
+            <hr>
+
+            <div class="form-group col-md-8">
+                <label for="e1">Please Enter Power Supply Voltage Value [E1]</label>
+                <input type="text" class="form-control" id="e1" name="e1" placeholder="">
+            </div>
+
+            <div class="form-group col-md-8">
+                <label for="e2">Please Enter Power Supply Voltage Value [E2]</label>
+                <input type="text" class="form-control" id="e2" name="e2" placeholder="">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Calculate</button>
+
+        </form>
+    </div>
 
 
 
