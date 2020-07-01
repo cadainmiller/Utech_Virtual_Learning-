@@ -20,11 +20,11 @@
             <img src="images/SuperPosition.png" alt="">
         </div>
 
-        <form>
+        <form id="lab1" method="POST" action="/cal_lab1">
             <div class="form-group row">
                 <label for="r1" class="col-sm-2 col-form-label">Enter Resistance [R1]</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="r1" name="r1" placeholder="">
+                    <input type="number" class="form-control" id="r1" name="r1" placeholder="">
                 </div>
                 <label for="r1" class=" col-form-label">&#8486;</label>
             </div>
@@ -32,7 +32,7 @@
             <div class="form-group row">
                 <label for="r2" class="col-sm-2 col-form-label">Enter Resistance [R2]</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="r2" name="r2" placeholder="">
+                    <input type="number" class="form-control" id="r2" name="r2" placeholder="">
                 </div>
                 <label for="r2" class=" col-form-label">&#8486;</label>
             </div>
@@ -40,7 +40,7 @@
             <div class="form-group row">
                 <label for="r3" class="col-sm-2 col-form-label">Enter Resistance [R3]</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="r3" name="r3" placeholder="">
+                    <input type="number" class="form-control" id="r3" name="r3" placeholder="">
                 </div>
                 <label for="r3" class=" col-form-label">&#8486;</label>
             </div>
@@ -54,7 +54,7 @@
             <div class="form-group row">
                 <label for="e1" class="col-sm-2 col-form-label">Enter Power Supply Voltage Value [E1]</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="e1" name="e1" placeholder="">
+                    <input type="number" class="form-control" id="e1" name="e1" placeholder="">
                 </div>
                 <label for="e1" class=" col-form-label">V</label>
             </div>
@@ -62,13 +62,13 @@
             <div class="form-group row">
                 <label for="e2" class="col-sm-2 col-form-label">Enter Power Supply Voltage Value [E2]</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="e2" name="e2" placeholder="">
+                    <input type="number" class="form-control" id="e2" name="e2" placeholder="">
                 </div>
                 <label for="e2" class=" col-form-label">V</label>
             </div>
 
 
-            <button type="submit" class="btn btn-primary">Calculate</button>
+            <button type="submit" type="button" class="btn btn-success">Calculate</button>
 
         </form>
     </div>
