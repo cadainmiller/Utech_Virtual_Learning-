@@ -128,4 +128,28 @@ router.post('/cal_lab2', urlencodedParser, function (req, res, next) {
 
 });
 
+router.post('/cal_lab2', urlencodedParser, function (req, res, next) {
+  var rs = parseFloat(req.body.rs);
+  var eth = parseFloat(req.body.eth);
+  var rl = parseFloat(req.body.rl);
+
+  var Rtotal = 0;
+  var Ith = 0;
+  var Vl = 0;
+  var Rvl = 0;
+
+  Rtotal = rth + Rvl;
+  Ith = eth / Rtotal;
+  Vl = Ith * Rvl;
+  (Vl).toFixed(4);
+
+
+
+  res.render("pages/lab2_result", {
+    IaM: IaM,
+    Vl1: Vl1,
+  });
+
+});
+
 module.exports = router;
