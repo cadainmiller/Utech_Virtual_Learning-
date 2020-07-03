@@ -23,7 +23,8 @@ app.use('/', mainRouter);
 app.use('/lab1', mainRouter);
 app.use('/lab2', mainRouter);
 app.use('/lab3', mainRouter);
-app.use('/users', usersRouter);
+app.use('/lab4', mainRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
