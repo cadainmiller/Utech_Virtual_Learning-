@@ -21,6 +21,10 @@ router.get('/lab3', function (req, res, next) {
   res.render('pages/lab3', { title: 'Express' });
 });
 
+router.get('/lab4', function (req, res, next) {
+  res.render('pages/lab4', { title: 'Express' });
+});
+
 router.get('/lab1_result', function (req, res, next) {
   res.render('pages/lab1_result', { title: 'Express' });
 });
@@ -31,6 +35,10 @@ router.get('/lab2_result', function (req, res, next) {
 
 router.get('/lab3_result', function (req, res, next) {
   res.render('pages/lab3_result', { title: 'Express' });
+});
+
+router.get('/lab4_result', function (req, res, next) {
+  res.render('pages/lab4_result', { title: 'Express' });
 });
 
 
@@ -151,6 +159,30 @@ router.post('/cal_lab3', urlencodedParser, function (req, res, next) {
 
 
   res.render("pages/lab3_result", {
+    VlD: VlD,
+  });
+
+});
+
+router.post('/cal_lab4', urlencodedParser, function (req, res, next) {
+  var rth1 = parseFloat(req.body.rth1);
+  var eth = parseFloat(req.body.eth);
+  var rll = parseFloat(req.body.rll);
+
+  var Rtotal = 0;
+  var Ith = 0;
+  var vl = 0;
+  var VlD = 0;
+
+  Rtotal = rth1 + rll;
+  Ith = eth / Rtotal;
+  vl = Ith * rll;
+
+  VlD = (vl).toFixed(4);
+
+
+
+  res.render("pages/lab4_result", {
     VlD: VlD,
   });
 
