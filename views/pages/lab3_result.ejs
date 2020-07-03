@@ -8,7 +8,7 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Thevenin's Theorem</h1>
-                <h5>Using total Thevenin Resistance</h5>
+                <h2>Using Parallel Resistances</h2>
                 <p class="lead">Thevenin’s Theorem states that “Any linear circuit containing several voltages and
                     resistances can be replaced by just one single voltage in series with a single resistance connected
                     across the load“.</p>
@@ -19,29 +19,6 @@
         <div class="card">
             <h5 class="card-header">Result</h5>
             <div class="card-body">
-                <div class="card mt-3">
-                    <div class="card-header">
-                        <h6>Ammeter</h6>
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <fieldset disabled>
-                                <div class="input-group mb-2">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">Total Current (I)</div>
-                                    </div>
-                                    <input type="text" class="form-control" id="inlineFormInputGroup"
-                                        placeholder="<%= IaM %>">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">mA</span>
-                                    </div>
-
-                                </div>
-                            </fieldset>
-
-                        </form>
-                    </div>
-                </div>
 
                 <div class="card mt-3 mb-3">
                     <div class="card-header">
@@ -55,7 +32,7 @@
                                         <div class="input-group-text">Load Voltage</div>
                                     </div>
                                     <input type="text" class="form-control" id="inlineFormInputGroup"
-                                        placeholder="<%= Vl1 %>">
+                                        placeholder="<%= VlD %>">
                                     <div class="input-group-append">
                                         <span class="input-group-text">V</span>
                                     </div>

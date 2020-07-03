@@ -29,6 +29,10 @@ router.get('/lab2_result', function (req, res, next) {
   res.render('pages/lab2_result', { title: 'Express' });
 });
 
+router.get('/lab3_result', function (req, res, next) {
+  res.render('pages/lab3_result', { title: 'Express' });
+});
+
 
 router.post('/cal_lab1', urlencodedParser, function (req, res, next) {
   var r1 = parseFloat(req.body.r1);
@@ -128,26 +132,26 @@ router.post('/cal_lab2', urlencodedParser, function (req, res, next) {
 
 });
 
-router.post('/cal_lab2', urlencodedParser, function (req, res, next) {
+router.post('/cal_lab3', urlencodedParser, function (req, res, next) {
   var rs = parseFloat(req.body.rs);
   var eth = parseFloat(req.body.eth);
   var rl = parseFloat(req.body.rl);
 
   var Rtotal = 0;
   var Ith = 0;
-  var Vl = 0;
-  var Rvl = 0;
+  var vl = 0;
+  var VlD = 0;
 
-  Rtotal = rth + Rvl;
+  Rtotal = rs + rl;
   Ith = eth / Rtotal;
-  Vl = Ith * Rvl;
-  (Vl).toFixed(4);
+  vl = Ith * rl;
+
+  VlD = (vl).toFixed(4);
 
 
 
-  res.render("pages/lab2_result", {
-    IaM: IaM,
-    Vl1: Vl1,
+  res.render("pages/lab3_result", {
+    VlD: VlD,
   });
 
 });
