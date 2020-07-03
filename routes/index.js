@@ -175,10 +175,13 @@ router.post('/cal_lab4', urlencodedParser, function (req, res, next) {
   var VlD = 0;
 
   Rtotal = rth1 + rll;
+  Console.log("R Total:" + Rtotal);
   Ith = eth / Rtotal;
+  Console.log("ITH:" + Ith);
   vl = Ith * rll;
+  Console.log("VL:" + Rtovltal);
 
-  VlD = (vl).toFixed(4);
+  VlD = (vl).toFixed(2);
 
 
 
