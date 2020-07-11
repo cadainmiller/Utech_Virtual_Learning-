@@ -25,6 +25,10 @@ router.get('/lab4', function (req, res, next) {
   res.render('pages/lab4', { title: 'Express' });
 });
 
+router.get('/lab5', function (req, res, next) {
+  res.render('pages/lab5', { title: 'Express' });
+});
+
 router.get('/lab1_result', function (req, res, next) {
   res.render('pages/lab1_result', { title: 'Express' });
 });
