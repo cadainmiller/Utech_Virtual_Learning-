@@ -45,6 +45,9 @@ router.get('/lab4_result', function (req, res, next) {
   res.render('pages/lab4_result', { title: 'Express' });
 });
 
+router.get('/lab5_result', function (req, res, next) {
+  res.render('pages/lab5_result', { title: 'Express' });
+});
 
 /* Post Routes Page. */
 router.post('/cal_lab1', urlencodedParser, function (req, res, next) {
@@ -160,6 +163,43 @@ router.post('/cal_lab4', urlencodedParser, function (req, res, next) {
   res.render("pages/lab4_result", {
     VlD: VlD,
   });
+
+});
+
+router.post('/cal_lab5', urlencodedParser, function (req, res, next) {
+  var r1 = parseFloat(req.body.r1);
+  var r2 = parseFloat(req.body.r2);
+  var r3 = parseFloat(req.body.r3);
+  var r4 = parseFloat(req.body.r4);
+  var r5 = parseFloat(req.body.r5);
+
+  var l2 = parseFloat(req.body.l2);
+  var l5 = parseFloat(req.body.l5);
+
+  var c4 = parseFloat(req.body.c4);
+  var c5 = parseFloat(req.body.c5);
+
+  const pi = 3.14;
+  var xl2 = 0;
+  var xc2 = 0;
+  var xc5 = 0;
+  var xl5 = 0;
+
+
+
+  //Calculate Reactances
+  xl2 = 2 * pi * l2;
+  xc4 = Math.pow((2 * pi * c4), -1);
+  xc5 = Math.pow((2 * pi * c5), -1);
+  xl5 = 2 * pi * l5;
+
+  //Total Impedances Branches
+
+
+
+  // res.render("pages/lab4_result", {
+  //   VlD: VlD,
+  // });
 
 });
 
