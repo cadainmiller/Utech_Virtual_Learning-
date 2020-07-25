@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require("body-parser");
 
+var Complex = require('complex.js');
+var sqrt = require('mathjs');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 /* GET Routes Page. */
@@ -179,7 +181,6 @@ router.post('/cal_lab5', urlencodedParser, function (req, res, next) {
   var c4 = parseFloat(req.body.c4);
   var c5 = parseFloat(req.body.c5);
 
-  const pi = 3.14;
   var xl2 = 0;
   var xc2 = 0;
   var xc5 = 0;
@@ -188,14 +189,60 @@ router.post('/cal_lab5', urlencodedParser, function (req, res, next) {
 
 
   //Calculate Reactances
-  xl2 = 2 * pi * l2;
-  xc4 = Math.pow((2 * pi * c4), -1);
-  xc5 = Math.pow((2 * pi * c5), -1);
-  xl5 = 2 * pi * l5;
+  // xl2 = 2 * pi * l2;
+  // xc4 = Math.pow((2 * pi * c4), -1);
+  // xc5 = Math.pow((2 * pi * c5), -1);
+  // xl5 = 2 * pi * l5;
 
   //Total Impedances Branches
 
+  //Calculations for reactances
 
+  //Branch 4
+  xl2 = 2 * (Math.PI) * f * (l2);
+
+  //Branch 4
+  xc4 = (2 * (Math.PI) * f * (c4)) ^ -1;
+
+  //Branch 5
+  xc5 = (2 * (Math.PI) * f * (c5)) ^ -1;
+  xl5 = 2 * (Math.PI) * f * (l5);
+
+
+  //Total impedances in branches
+
+  //branch 2
+  z2 = math.complex(r2, xl2)     // (r2+jxl2)ohms
+
+  //branch 4
+  z4 = math.complex(r4, -xc4)
+
+  //branch 5
+  xlc5 = xl5 - xc5
+  z5 = math.complex(r5, xc5)
+
+
+  //Calculation for input supply voltage
+  zz_val = ((z5 * z4) / (z4 + z5));
+  zz = complex.toPolar(zz_val);
+
+  Ir3a = v_diff / r3;
+
+  V2a_val = Ir3a * zz;
+  V2a = complex.toPolar(V2a_val);
+
+  V1a_val = V2a + v_diff;
+  V1a = complex.toPolar(V1a_val);
+
+  Iz2a = V1a / z2;
+
+  Itotal_a_val = Ir3a + Iz2a;
+  Itotal_a = complex.toPolar(Itotal_a_val);
+
+  vsupply_val = (Itotal_a * r1) + V1a;
+  vsupply = complex.toPolar(vsupply_val);
+
+  vin_val = vsupply(r);
 
   // res.render("pages/lab4_result", {
   //   VlD: VlD,
