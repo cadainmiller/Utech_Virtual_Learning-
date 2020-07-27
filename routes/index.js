@@ -51,6 +51,11 @@ router.get('/lab5_result', function (req, res, next) {
   res.render('pages/lab5_result', { title: 'Express' });
 });
 
+router.get('/labmanual', function (req, res, next) {
+  res.render('pages/labmanual', { title: 'Express' });
+});
+
+
 /* Post Routes Page. */
 router.post('/cal_lab1', urlencodedParser, function (req, res, next) {
   var r1 = parseFloat(req.body.r1);
