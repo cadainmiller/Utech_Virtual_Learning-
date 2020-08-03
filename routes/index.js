@@ -3,7 +3,8 @@ var router = express.Router();
 var bodyParser = require("body-parser");
 
 var Complex = require('complex.js');
-var sqrt = require('mathjs');
+const { complex, add, multiply, sin, sqrt, pi, equal, sort, format } = require('mathjs');
+
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 /* GET Routes Page. */
@@ -180,6 +181,7 @@ router.post('/cal_lab5', urlencodedParser, function (req, res, next) {
 
   var c4 = parseFloat(req.body.c4);
   var c5 = parseFloat(req.body.c5);
+  var f = parseFloat(req.body.f);
 
   var xl2 = 0;
   var xc2 = 0;
@@ -212,24 +214,24 @@ router.post('/cal_lab5', urlencodedParser, function (req, res, next) {
   //Total impedances in branches
 
   //branch 2
-  z2 = math.complex(r2, xl2)     // (r2+jxl2)ohms
+  z2 = complex(r2, xl2)     // (r2+jxl2)ohms
 
   //branch 4
-  z4 = math.complex(r4, -xc4)
+  z4 = complex(r4, -xc4)
 
   //branch 5
   xlc5 = xl5 - xc5
-  z5 = math.complex(r5, xc5)
+  z5 = complex(r5, xc5)
 
 
   //Calculation for input supply voltage
   zz_val = ((z5 * z4) / (z4 + z5));
-  zz = complex.toPolar(zz_val);
+  zz = Math.toPolar(zz_val);
 
   Ir3a = v_diff / r3;
 
   V2a_val = Ir3a * zz;
-  V2a = complex.toPolar(V2a_val);
+  V2a = Math.toPolar(V2a_val);
 
   V1a_val = V2a + v_diff;
   V1a = complex.toPolar(V1a_val);
