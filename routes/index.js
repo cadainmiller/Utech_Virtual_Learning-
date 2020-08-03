@@ -226,12 +226,12 @@ router.post('/cal_lab5', urlencodedParser, function (req, res, next) {
 
   //Calculation for input supply voltage
   zz_val = ((z5 * z4) / (z4 + z5));
-  zz = Math.toPolar(zz_val);
+  zz = complex.toPolar(zz_val);
 
   Ir3a = v_diff / r3;
 
   V2a_val = Ir3a * zz;
-  V2a = Math.toPolar(V2a_val);
+  V2a = math.toPolar(V2a_val);
 
   V1a_val = V2a + v_diff;
   V1a = complex.toPolar(V1a_val);
