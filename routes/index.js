@@ -230,8 +230,13 @@ router.post("/cal_lab5", urlencodedParser, function (req, res, next) {
   console.log(d.abs(), degrees);
 
   //Calculation for input supply voltage
-  // zz_val = ((z5 * z4) / (z4 + z5));
-  // zz = complex.toPolar(zz_val);
+  zz_val = (z5 * z4) / (z4 + z5);
+  x = z5 * z4;
+  y = z4 + z5;
+  d = complex(x, y);
+  degrees = d.arg() * (180 / Math.PI);
+  console.log(d.abs(), degrees);
+
 
   // Ir3a = v_diff / r3;
 
