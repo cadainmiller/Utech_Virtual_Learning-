@@ -216,32 +216,46 @@ router.post("/cal_lab5", urlencodedParser, function (req, res, next) {
 
   //branch 2
   z2 = complex(r2, xl2); // (r2+jxl2)ohms
+  console.log(z2)
 
   //branch 4
   z4 = complex(r4, -xc4);
+  console.log( z4)
 
   //branch 5
   xlc5 = xl5 - xc5;
   z5 = complex(r5, xc5);
+  console.log(z5)
 
-  const d = complex(3, 4);
-  console.log(d.abs(), d.arg()); // radius = 5, phi = 0.9272952180016122
-  degrees = d.arg() * (180 / Math.PI);
-  console.log(d.abs(), degrees);
+  //const d = complex(3, 4);
+  //console.log(d.abs(), d.arg()); // radius = 5, phi = 0.9272952180016122
+  //degrees = d.arg() * (180 / Math.PI);
+  //console.log(d.abs(), degrees);
 
   //Calculation for input supply voltage
-  zz_val = (z5 * z4) / (z4 + z5);
-  x = z5 * z4;
-  y = z4 + z5;
-  d = complex(x, y);
-  degrees = d.arg() * (180 / Math.PI);
-  console.log(d.abs(), degrees);
+  z4xz5Re = z5.re * z4.re;
+  z4xz5Im = z5.im * z4.im;
+
+  mutiz4andz5 = z4xz5Re * z4xz5Im;
+
+  z4xp5Re = z5.re + z4.re;
+  z4xp5Im = z5.im + z4.im;
+
+  addz4andz5 = z4xp5Re + z4xp5Im;
+
+  // zz_val = (z5 * z4) / (z4 + z5);
+  // console.log(zz_val)
+  zz_val = complex(mutiz4andz5, addz4andz5);
+  console.log(zz_val)
+  degrees = zz_val.arg() * (180 / Math.PI);
+  console.log(zz_val.abs(), degrees);
 
 
-  // Ir3a = v_diff / r3;
+  Ir3a = v_diff / r3;
 
-  // V2a_val = Ir3a * zz;
-  // V2a = math.toPolar(V2a_val);
+  V2a_val = Ir3a * zz;
+  V2a = complex(V2a_val);
+  console.log(V2a)
 
   // V1a_val = V2a + v_diff;
   // V1a = complex.toPolar(V1a_val);
